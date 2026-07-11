@@ -1,0 +1,49 @@
+# Core data handling
+pandas>=2.0.0
+numpy>=1.24.0
+pyarrow>=14.0.0
+
+# Dataset access (official BEIR library — required for correct TREC-COVID qrels parsing)
+beir>=2.0.0
+
+# Embedding models / cross-encoder
+sentence-transformers>=2.5.0
+transformers>=4.38.0
+torch>=2.1.0
+
+# Dense vector search
+faiss-cpu>=1.7.4
+
+# Named entity recognition
+spacy>=3.7.0
+
+# Knowledge graph construction & visualization
+networkx>=3.2.0
+matplotlib>=3.8.0
+
+# Evaluation / ML utilities
+scikit-learn>=1.4.0
+
+# Web application
+streamlit>=1.31.0
+
+# Progress bars (used internally by sentence-transformers)
+tqdm>=4.66.0
+
+# --- Account features: authentication, database, AI assistant ---
+
+# Environment variable / secrets loading (.env)
+python-dotenv>=1.0.0
+
+# MongoDB Atlas driver
+pymongo[srv]>=4.6.0
+
+# Password hashing
+bcrypt>=4.1.0
+
+# Email format validation
+email-validator>=2.1.0
+
+# Google Gemini API client (used only for post-retrieval RAG features)
+google-generativeai>=0.5.0
+
