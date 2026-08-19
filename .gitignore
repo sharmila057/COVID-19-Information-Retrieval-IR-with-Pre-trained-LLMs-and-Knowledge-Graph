@@ -16,7 +16,7 @@ __pycache__/
 
 # Generated Data
 data/raw/
-data/processed/*.parquet
+#data/processed/*.parquet
 
 # Embeddings
 #embeddings/
