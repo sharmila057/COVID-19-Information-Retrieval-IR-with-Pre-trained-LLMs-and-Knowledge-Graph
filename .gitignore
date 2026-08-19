@@ -19,12 +19,12 @@ data/raw/
 data/processed/*.parquet
 
 # Embeddings
-embeddings/
+#embeddings/
 *.npy
 *.pkl
 
 # FAISS
-faiss_index/
+#faiss_index/
 
 # Results
 results/
