@@ -135,22 +135,37 @@ MIN_PASSWORD_LENGTH = 8
 SESSION_STATE_USER_KEY = "auth_user"      # st.session_state key holding the logged-in user dict
 SESSION_STATE_PAGE_KEY = "current_page"   # st.session_state key holding the active dashboard page
 
+
 # --------------------------------------------------------------------------
 # MONGODB ATLAS CONFIGURATION
 # --------------------------------------------------------------------------
-MONGO_URI = os.environ.get("MONGO_URI", "")
-MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME", "covid_ir_system")
+try:
+    import streamlit as st
+
+    MONGO_URI = os.environ.get("MONGO_URI") or st.secrets.get("MONGO_URI", "")
+    MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME") or st.secrets.get(
+        "MONGO_DB_NAME", "covid_ir_system"
+    )
+
+    GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") or st.secrets.get(
+        "GEMINI_API_KEY", ""
+    )
+    GEMINI_MODEL_NAME = os.environ.get("GEMINI_MODEL_NAME") or st.secrets.get(
+        "GEMINI_MODEL_NAME", "gemini-1.5-flash"
+    )
+
+except Exception:
+    MONGO_URI = os.environ.get("MONGO_URI", "")
+    MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME", "covid_ir_system")
+    GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+    GEMINI_MODEL_NAME = os.environ.get(
+        "GEMINI_MODEL_NAME", "gemini-1.5-flash"
+    )
 
 USERS_COLLECTION = "users"
 SEARCH_HISTORY_COLLECTION = "search_history"
 BOOKMARKS_COLLECTION = "bookmarks"
 
-# --------------------------------------------------------------------------
-# GOOGLE GEMINI CONFIGURATION
-# --------------------------------------------------------------------------
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-GEMINI_MODEL_NAME = os.environ.get("GEMINI_MODEL_NAME", "gemini-1.5-flash")
-# Hard cap on how much retrieved-abstract text is stuffed into a single
-# Gemini prompt, to keep RAG context focused and within token limits.
+# Hard cap on retrieved context sent to Gemini
 GEMINI_MAX_CONTEXT_CHARS_PER_DOC = 1200
 
