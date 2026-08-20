@@ -151,7 +151,7 @@ try:
         "GEMINI_API_KEY", ""
     )
     GEMINI_MODEL_NAME = os.environ.get("GEMINI_MODEL_NAME") or st.secrets.get(
-        "GEMINI_MODEL_NAME", "gemini-1.5-flash"
+        "GEMINI_MODEL_NAME", "gemini-3.6-flash"
     )
 
 except Exception:
