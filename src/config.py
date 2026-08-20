@@ -159,7 +159,7 @@ except Exception:
     MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME", "covid_ir_system")
     GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
     GEMINI_MODEL_NAME = os.environ.get(
-        "GEMINI_MODEL_NAME", "gemini-1.5-flash"
+        "GEMINI_MODEL_NAME", "gemini-3.6-flash"
     )
 
 USERS_COLLECTION = "users"
