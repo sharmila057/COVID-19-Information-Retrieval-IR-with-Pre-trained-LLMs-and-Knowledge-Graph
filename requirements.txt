@@ -3,12 +3,13 @@ pandas>=2.0.0
 numpy>=1.24.0
 pyarrow==20.0.0
 
-# Dataset access (official BEIR library — required for correct TREC-COVID qrels parsing)
-beir>=2.0.0
+# Dataset access
+beir==2.2.0
+datasets==3.2.0
 
 # Embedding models / cross-encoder
-sentence-transformers>=2.5.0
-transformers>=4.38.0
+sentence-transformers==3.4.1
+transformers==4.47.1
 torch>=2.1.0
 
 # Dense vector search
