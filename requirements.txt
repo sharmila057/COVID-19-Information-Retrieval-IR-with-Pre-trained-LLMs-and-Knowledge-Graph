@@ -1,7 +1,7 @@
 # Core data handling
 pandas>=2.0.0
 numpy>=1.24.0
-pyarrow>=14.0.0
+pyarrow>=20.0.0
 
 # Dataset access (official BEIR library — required for correct TREC-COVID qrels parsing)
 beir>=2.0.0
